@@ -165,10 +165,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div 
-              className="w-full mb-6 cursor-pointer group"
-              onClick={() => fileInputRef.current?.click()}
-            >
+           <label className="w-full mb-6 cursor-pointer group block">
               <div className={`
                 bg-white/5 backdrop-blur-sm border-2 border-dashed rounded-3xl p-8 
                 flex flex-col items-center justify-center transition-all duration-300 
@@ -187,19 +184,20 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                       </svg>
                     </div>
-                    <p className="text-white text-base font-medium group-hover:scale-105 transition-transform">Klik Untuk Unggah Gambar / Kamera</p>
+                    <p className="text-white text-base font-medium group-hover:scale-105 transition-transform">Klik Untuk Unggah Gambar</p>
                     <p className="text-white/50 text-xs mt-2">Mendukung JPG, PNG</p>
                    </>
                 )}
               </div>
+              
+              {/* Input diletakkan DI DALAM label, tanpa 'capture' agar muncul pilihan */}
               <input 
-                ref={fileInputRef}
                 type="file" 
                 className="hidden" 
                 accept="image/*" 
                 onChange={handleFileChange} 
               />
-            </div>
+            </label>
 
             
             <div className="w-full">
