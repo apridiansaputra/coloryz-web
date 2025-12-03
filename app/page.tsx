@@ -190,7 +190,6 @@ export default function Home() {
                 )}
               </div>
               
-              {/* Input diletakkan DI DALAM label, tanpa 'capture' agar muncul pilihan */}
               <input 
                 type="file" 
                 className="hidden" 
