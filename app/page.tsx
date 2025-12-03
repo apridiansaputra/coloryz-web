@@ -44,16 +44,16 @@ export default function Home() {
         setModelStatus("Sedang mendownload Model AI (100MB)... Harap tunggu.");
         setDownloadProgress(true);
 
-        const sess = await ort.InferenceSession.create("/models/color_resnet50.onnx", {
+        const sess = await ort.InferenceSession.create("/model/color_resnet50.onnx", {
           executionProviders: ["wasm"], 
         });
         
         setSession(sess);
-        setModelStatus("✅ Siap Digunakan!");
+        setModelStatus("Siap Digunakan!");
         setDownloadProgress(false);
       } catch (e) {
         console.error("Error load model:", e);
-        setModelStatus("❌ Gagal memuat model. Cek koneksi internet.");
+        setModelStatus("Gagal memuat model. Cek koneksi internet.");
         setDownloadProgress(false);
       }
     }
