@@ -20,10 +20,8 @@ export default function Home() {
   useEffect(() => {
     async function initModel() {
       try {
-        // Mengambil model dari folder public/models/
-        // Pastikan file .onnx kamu ada di folder: public/models/color_resnet50.onnx
-        const sess = await ort.InferenceSession.create("/models/color_resnet50.onnx", {
-          executionProviders: ["wasm"], // Menggunakan CPU Browser
+        const sess = await ort.InferenceSession.create("/model/color_resnet50.onnx", {
+          executionProviders: ["wasm"], 
         });
         setSession(sess);
         setStatus("Siap Deteksi!");
